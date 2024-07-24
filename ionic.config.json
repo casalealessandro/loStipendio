@@ -1,0 +1,7 @@
+{
+  "name": "loStipendio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
