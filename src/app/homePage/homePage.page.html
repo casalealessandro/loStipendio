@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1sssssssssssss</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item>
+      <ion-label position="floating">Stipendio Mensile</ion-label>
+      <ion-input [(ngModel)]="salary" type="number"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="saveSalary()">Salva</ion-button>
+    <ion-card *ngIf="essentials !== undefined">
+      <ion-card-header>
+        <ion-card-title>Distribuzione Stipendio</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Essentials: {{ essentials }} €</p>
+        <p>Wants: {{ wants }} €</p>
+        <p>Savings: {{ savings }} €</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>
