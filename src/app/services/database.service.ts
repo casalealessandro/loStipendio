@@ -5,16 +5,17 @@ import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacito
 @Injectable({
   providedIn: 'root'
 })
+
 export class DatabaseService {
-  private sqlite!: SQLiteConnection;
-  private db!: SQLiteDBConnection;
+  private sqlite: SQLiteConnection =  new SQLiteConnection(CapacitorSQLite);
+  private db!: SQLiteDBConnection
 
   constructor() {
     this.initDB();
   }
 
   async initDB() {
-    this.sqlite = new SQLiteConnection(CapacitorSQLite);
+  
     try {
       this.db = await this.sqlite.createConnection('salary_db', false, 'no-encryption', 1,false);
       await this.db.open();
@@ -56,8 +57,7 @@ export class DatabaseService {
   async getLatestIncome() {
     const query = `SELECT * FROM Income ORDER BY id DESC LIMIT 1`;
     const result = await this.db.query(query);
-    return result.values?.[0] || null;
-    
+    return result.values![0];
   }
 
   async getExpenses() {

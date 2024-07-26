@@ -1,0 +1,20 @@
+<!-- src/app/pages/summary/summary.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Riepilogo Spese
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let expense of expenses">
+      <ion-label>
+        <h2>{{ expense.category }}</h2>
+        <p>{{ expense.description }}</p>
+        <p>{{ expense.amount }} €</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
